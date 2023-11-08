@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dark-mode {
+    --bg: #1a202c;
+    --text-color: #fff;
+    background-color: var(--bg);
+    color: var(--text-color);
+}
