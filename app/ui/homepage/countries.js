@@ -60,8 +60,8 @@ const Countries = ({ data }) => {
 
     return (
         <div className="w-full px-10 relative" onClick={() => setShowOptions(false)}>
-            <div className="flex py-8 fixed w-full items-center justify-between top-12 lg:top-16 pr-20 bg-dgray">
-                <div className="rounded-xl text-white w-[22rem] space-x-5 bg-lgray pl-3 flex items-center">
+            <div className="lg:flex flex flex-col lg:flex-row py-8 fixed w-full items-start lg:items-center justify-between top-12 lg:top-16 pr-20 bg-dgray">
+                <div className="rounded-xl mb-5 lg:mb-0 text-white w-[22rem] space-x-5 bg-lgray pl-3 flex items-center">
                     <BiSearch className='peer' />
                     <input
                     value={searchTerm}
@@ -91,7 +91,7 @@ const Countries = ({ data }) => {
                     }
                 </div>
             </div>
-            <div className="container mt-48 mx-auto justify-between gap-y-10 lg:grid grid-cols-4">
+            <div className="mt-48 mx-auto justify-between gap-y-10 flex flex-col space-y-4 lg:grid grid-cols-4">
                 {filteredOptions.map((item, itemIndex) => (
                     <Link href={`/countries/${item.name.official.toLowerCase()}`} key={itemIndex}> 
                     <Card

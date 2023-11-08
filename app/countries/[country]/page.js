@@ -11,10 +11,10 @@ export default async function CountryPage({ params }) {
     console.log(data)
     return (
       <Suspense fallback={<h2>Loading...</h2>}>
-        <div className="h-screen w-full px">
+        <div className="h-full w-full px">
           <div className="px-10 flex-col justify-center h-full items-center">
-          <Link href='/' className="rounded-xl bg-lgray px-5 mt-10 py-3 text-white"><button>Back</button></Link>
-          <div className="container mx-auto h-full flex items-center py-r justify-between">
+          <Link href='/' className="rounded-xl bg-lgray px-5 mt-10 py-3 mb-6 lg:mb-0 text-white"><button>Back</button></Link>
+          <div className="container mx-auto h-full flex flex-col lg:flex-row items-center py-r space-y-7 lg:justify-between">
             <Image src={data[0].flags.png} width={600} height={700} alt={data[0].name.common} />
             <div className="text-white w-1/2 ml-5">
               <h3 className="text-xl font-bold mb-7">{data[0].name.common}</h3>
