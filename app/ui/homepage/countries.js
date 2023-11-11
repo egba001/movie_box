@@ -1,5 +1,4 @@
 import { BiChevronDown, BiSearch } from 'react-icons/bi';
-import Filter from './filter';
 import Card from './card';
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
@@ -55,12 +54,12 @@ const Countries = ({ data }) => {
 
     // Check if the array exists and is an array before mapping through it
     if (!data || !Array.isArray(data)) {
-        return <div>No valid array provided</div>;
+        return <div className="text-center text-white font-bold text-3xl">Loading....</div>;
     }
 
     return (
-        <div className="w-full px-10 relative" onClick={() => setShowOptions(false)}>
-            <div className="lg:flex flex flex-col lg:flex-row py-8 fixed w-full items-start lg:items-center justify-between top-12 lg:top-16 pr-20 bg-dgray">
+        <div className="w-full px-10" onClick={() => setShowOptions(false)}>
+            <div className="lg:flex flex flex-col lg:flex-row py-8 mt-12 lg:mt-7 fixed w-full items-start lg:items-center justify-between top-10 left-0   bg-dgray px-12 ">
                 <div className="rounded-xl mb-5 lg:mb-0 text-white w-[22rem] space-x-5 bg-lgray pl-3 flex items-center">
                     <BiSearch className='peer' />
                     <input
@@ -71,7 +70,6 @@ const Countries = ({ data }) => {
                 </div>
                 <div className="relative" onClick={(e) => e.stopPropagation()}>
                     <div onClick={() => {
-                        
                         setShowOptions(!showOptions)
                     }} className="w-[12rem] py-3 cursor-pointer justify-center bg-lgray flex items-center space-x-3 text-white rounded-xl">
                         <span>Filter by Region</span>
@@ -91,7 +89,7 @@ const Countries = ({ data }) => {
                     }
                 </div>
             </div>
-            <div className="mt-48 mx-auto justify-between gap-y-10 flex flex-col space-y-4 lg:grid grid-cols-4">
+            <div className="mx-auto justify-between gap-y-10 space-y-4 flex flex-col  lg:grid lg:grid-cols-4">
                 {filteredOptions.map((item, itemIndex) => (
                     <Link href={`/countries/${item.name.official.toLowerCase()}`} key={itemIndex}> 
                     <Card

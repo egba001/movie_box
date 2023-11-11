@@ -3,7 +3,7 @@ import Image from 'next/image'
 const Card = ({ name, population, region, capital, image }) => {
     return (
         <div className="h-[16.5rem] text-white px-6 rounded-md">
-            <div className='h-1/2 overflow-hidden'>
+            <div className='h-[45%] overflow-hidden'>
                 <Image
                     src={image}
                     alt={`${name}'s flag`}
@@ -12,7 +12,7 @@ const Card = ({ name, population, region, capital, image }) => {
                     className='object-cover'
                 />
             </div>
-            <div className='w-full px-2 py-2 text-sm bg-lgray h-1/2'>
+            <div className='w-full px-2 py-2 text-sm bg-lgray h-[55%]'>
                 <h2 className='font-semibold  mb-2'>{name}</h2>
                 <p>Population: {population}</p>
                 <p>Region: {region}</p>
