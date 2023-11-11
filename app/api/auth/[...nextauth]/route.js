@@ -40,6 +40,7 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
+  secret: process.env.NEXTAUTH_SECRET
   // callbacks: {
   //   async signIn({ user, account }: { user: AuthUser; account: Account }) {
   //     if (account?.provider == "credentials") {
