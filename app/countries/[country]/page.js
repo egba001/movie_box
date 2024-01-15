@@ -26,7 +26,6 @@ export default async function CountryPage({ params }) {
             </div>
           </div>
           </div>
-          
         </div>
       </Suspense>
     )
